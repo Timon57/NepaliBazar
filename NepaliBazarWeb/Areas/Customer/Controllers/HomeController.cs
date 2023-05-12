@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using NepaliBazarWeb.Models;
+using NepaliBazar.Models;
 using System.Diagnostics;
 
 namespace NepaliBazarWeb.Areas.Customer.Controllers

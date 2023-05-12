@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\NepaliBazar.DataAccess\NepaliBazar.DataAccess.csproj" />
+    <ProjectReference Include="..\NepaliBazar.Models\NepaliBazar.Models.csproj" />
   </ItemGroup>
 
 </Project>
