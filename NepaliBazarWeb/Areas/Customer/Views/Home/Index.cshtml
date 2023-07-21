@@ -1,0 +1,40 @@
+﻿@model IEnumerable<NepaliBazar.Models.Product>
+<div class="row pb-3">
+    @foreach(var product in Model)
+    {
+        <div class="col-lg-3 col-md-6">
+            <div class="row p-2 ">
+                <a asp-action="Details" asp-route-productId="@product.Id" class="col-12 p-1" style="border:1px solid #008cba; border-radius:5px; height: 100%;">
+                    <div class="card h-100" style="background-color:azure">
+                        <img src="@product.ImageUrl" class="card-img-top rounded d-block mx-auto image-height"/>
+                        <div class="card-body d-flex flex-column">
+                            <div class="pl-1">
+                                <p class="card-title h5 text-primary text-danger">@product.Name</p>
+                                
+                            </div>
+                            <div class="pl-1">
+                                <p>Brand: <b>@product.Brand</b></p>
+                                <p>Category: <b>@product.Category.Name</b></p>
+
+                                <p>Price: <b>@product.actualPrice.ToString("0.00")</b>  <small><s>@product.Price.ToString("0.00")</s></small></p>
+                                
+                            </div>
+                            <div class="mt-auto pl-1">
+                                <p>Discount: <b>@product.DiscountedPrice.ToString("0.00")%</b></p>
+                            </div>  
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    }
+</div>
+
+<style>
+    .image-height {
+        height: 200px; /* Adjust the height as per your requirement */
+    }
+    p{
+        color:black;
+    }
+</style>

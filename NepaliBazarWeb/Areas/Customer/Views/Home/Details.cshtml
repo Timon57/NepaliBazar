@@ -1,0 +1,48 @@
+﻿@model NepaliBazar.Models.ShoppingCart
+
+<form method="post" asp-action="Details">
+    <input hidden asp-for="ProductId" name="ProductId" />
+
+    <div class="container pt-4">
+        <div class="card bg-light mx-auto" style="max-width: 600px;">
+            <div class="card-header bg-primary text-light">
+                <h1 class="text-white">@Model.product.Name</h1>
+                <span class="badge bg-light">@Model.product.Category.Name</span>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="@Model.product.ImageUrl" width="100%" class="rounded" />
+                    </div>
+                    <div class="col-md-6">
+                        <h5 class="text-muted">Brand: @Model.product.Brand</h5>
+                        <h5 class="text-muted">Price: @Model.product.actualPrice.ToString("c") <s>@Model.product.Price.ToString("c")</s></h5>
+                        <h5 class="text-muted">Weight: @Model.product.Weight.ToString("0.00") kg</h5>
+                        <h5 class="text-muted">Rating: @Model.product.Rating</h5>
+                        <div class="form-group">
+                            <label for="countInput" class="text-primary">Count:</label>
+                            <input id="countInput" asp-for="Count" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <p class="text-secondary">@Html.Raw(@Model.product.Description)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-md-6">
+                        <a class="btn btn-success btn-block" asp-action="Index">Back to Home</a>
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-end">
+                        <button type="submit" value="Add to Cart" class="btn btn-primary btn-block">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
